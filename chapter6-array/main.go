@@ -125,5 +125,4 @@ func main() {
 		}
 	}
 	fmt.Println(min)
-
 }
