@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	salary := []int{4000, 3000, 1000, 2000}
@@ -8,6 +11,7 @@ func main() {
 
 	fmt.Println(countOdds(3, 7))
 
+	fmt.Println(hammingWeight(00000000000000000000000000001011))
 }
 
 // You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
@@ -40,6 +44,19 @@ func countOdds(low int, high int) int {
 		//fmt.Println(i)
 		if i%2 != 0 {
 			count++
+		}
+	}
+	return count
+}
+
+// Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).
+func hammingWeight(num uint32) int {
+	count := 0
+	numString := []rune(strconv.FormatUint(uint64(num), 2))
+	for _, value := range numString {
+		//fmt.Println(string(value))
+		if string(value) == "1" {
+			count += 1
 		}
 	}
 	return count

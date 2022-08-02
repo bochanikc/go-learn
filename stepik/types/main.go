@@ -108,7 +108,6 @@ func main() {
 	fmt.Println(digits[0], digits[1])
 	resultAddCSV = digits[0] / digits[1]
 	fmt.Printf("%.2f", resultAddCSV)
-
 }
 
 func changeStringNumber(stringNumber string) float64 {
