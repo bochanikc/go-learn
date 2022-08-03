@@ -12,6 +12,8 @@ func main() {
 	fmt.Println(countOdds(3, 7))
 
 	fmt.Println(hammingWeight(00000000000000000000000000001011))
+
+	fmt.Println(subtractProductAndSum(234))
 }
 
 // You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
@@ -60,4 +62,19 @@ func hammingWeight(num uint32) int {
 		}
 	}
 	return count
+}
+
+// Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+func subtractProductAndSum(n int) int {
+	summ := 0
+	product := 1
+	numString := []rune(strconv.Itoa(n))
+	for _, value := range numString {
+		//fmt.Println(string(value))
+		digit, _ := strconv.Atoi(string(value))
+		summ += digit
+		product *= digit
+	}
+	result := product - summ
+	return result
 }
