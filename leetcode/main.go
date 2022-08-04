@@ -19,6 +19,8 @@ func main() {
 	fmt.Println(largestPerimeter([]int{1, 2, 1}))
 
 	fmt.Println(runningSum([]int{1, 2, 3, 4, 5}))
+
+	fmt.Println(arraySign([]int{-1, -2, -3, -4, 3, 2, 1}))
 }
 
 // There is a function signFunc(x) that returns:
