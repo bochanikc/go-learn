@@ -14,6 +14,52 @@ func main() {
 	fmt.Println(hammingWeight(00000000000000000000000000001011))
 
 	fmt.Println(subtractProductAndSum(234))
+
+	fmt.Println(largestPerimeter([]int{2, 1, 2}))
+	fmt.Println(largestPerimeter([]int{1, 2, 1}))
+
+	fmt.Println(runningSum([]int{1, 2, 3, 4, 5}))
+}
+
+// There is a function signFunc(x) that returns:
+// 1 if x is positive.
+// -1 if x is negative.
+// 0 if x is equal to 0.
+// You are given an integer array nums. Let product be the product of all values in the array nums.
+// Return signFunc(product).
+func arraySign(nums []int) int {
+	mark := 1
+	for _, value := range nums {
+		if value == 0 {
+			return 0
+		} else if value < 0 {
+			mark = -mark
+		}
+	}
+	return mark
+}
+
+// Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+//Return the running sum of nums.
+func runningSum(nums []int) []int {
+	result := []int{}
+	count := 0
+	for _, value := range nums {
+		count += value
+		result = append(result, count)
+	}
+	return result
+}
+
+func largestPerimeter(nums []int) int {
+
+	fmt.Println(nums[0], nums[1], nums[2])
+	if len(nums) == 3 && nums[0] < (nums[1]+nums[2]) && nums[1] < (nums[0]+nums[2]) && nums[2] < (nums[0]+nums[1]) {
+		p := nums[0] + nums[1] + nums[2]
+		return p
+	} else {
+		return 0
+	}
 }
 
 // You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
