@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 )
 
@@ -21,6 +22,22 @@ func main() {
 	fmt.Println(runningSum([]int{1, 2, 3, 4, 5}))
 
 	fmt.Println(arraySign([]int{-1, -2, -3, -4, 3, 2, 1}))
+
+	fmt.Println(maximumWealth([][]int{{1, 2, 3, 4, 5}, {1, 2, 3, 4}}))
+}
+
+func maximumWealth(accounts [][]int) int {
+	summ := 0
+	summs := []int{}
+	for _, client := range accounts {
+		for _, acc := range client {
+			summ += acc
+		}
+		summs = append(summs, summ)
+		summ = 0
+	}
+	sort.Ints(summs)
+	return summs[len(summs)-1]
 }
 
 // There is a function signFunc(x) that returns:
