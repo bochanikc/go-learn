@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -24,6 +25,12 @@ func main() {
 	fmt.Println(arraySign([]int{-1, -2, -3, -4, 3, 2, 1}))
 
 	fmt.Println(maximumWealth([][]int{{1, 2, 3, 4, 5}, {1, 2, 3, 4}}))
+
+	fmt.Println(interpret("(al)G(al)()()G"))
+}
+
+func interpret(command string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(command, "()", "o"), "(al)", "al")
 }
 
 func maximumWealth(accounts [][]int) int {
