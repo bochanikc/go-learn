@@ -1,4 +1,4 @@
-package gowithtests
+package integers
 
 import (
 	"fmt"
